@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <!--<link rel="stylesheet" href="/static/css/show.css">-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <title>employee update</title>
+</head>
+<body>
+    <div class="container">
+        <br>
+            <h3>Update Details</h3>
+        </p>
+        <form method="POST" action="/update/{{employee.id}}" style="margin-left: 15%;">
+            {% csrf_token %}
+            
+            <div class="form-group row">
+                <label for="inputEmployeeId" class="col-sm-3 col-form-label">Employee ID :</label>
+                <div class="col-sm-5">
+                    <input type="number" class="form-control" id="inputEmployeeId" name="eid" value="{{ employee.eid }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputName" class="col-sm-3 col-form-label">Name :</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="inputName" name="ename" value="{{ employee.ename }}">
+                </div>
+            </div> 
+            <div class="form-group row">
+                <label for="inputMailId" class="col-sm-3 col-form-label">Mail ID :</label>
+                <div class="col-sm-5">
+                    <input type="email" class="form-control" id="inputMailId" name="email" value="{{ employee.email }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputDob" class="col-sm-3 col-form-label">Date of Birth :</label>
+                <div class="col-sm-5">
+                    <input type="date" class="form-control" id="inputDob" name="dob" value="{{ employee.dob }}">
+                </div>
+            </div> 
+            <div class="form-group row">
+                <label for="inputPhoneNo" class="col-sm-3 col-form-label">Phone No. :</label>
+                <div class="col-sm-5">
+                    <input type="number" class="form-control" id="inputPhoneNo" name="econtact" value="{{ employee.econtact }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputAphoneNo" class="col-sm-3 col-form-label">Alternative Phone No. :</label>
+                <div class="col-sm-5">
+                    <input type="number" class="form-control" id="inputAphoneNo" name="econtact2" value="{{ employee.econtact2 }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputQualification" class="col-sm-3 col-form-label">Qualification :</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="inputQualification" name="qualification" value="{{ employee.qualification }}">
+                </div>
+            </div> 
+            <div class="form-group row">
+                <label for="inputDoj" class="col-sm-3 col-form-label">Date of Joining :</label>
+                <div class="col-sm-5">
+                    <input type="date" class="form-control" id="inputDoj" name="doj" value="{{ employee.doj }}">
+                </div>
+            </div> 
+            <div class="form-group row">
+                <label for="inputAadhar" class="col-sm-3 col-form-label">Aadhar No. :</label>
+                <div class="col-sm-5">
+                    <input type="number" class="form-control" id="inputAadhar" name="aadhar" value="{{ employee.aadhar }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPan" class="col-sm-3 col-form-label">Pan Card No. :</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="inputPan" name="pan" value="{{ employee.pan }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputAddress" class="col-sm-3 col-form-label">Address :</label>
+                <div class="col-sm-5">
+                    <textarea type="text" class="form-control" id="inputAddress" name="address" cols="30" rows="10" value="{{ employee.address }}"></textarea> 
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputBloodgroup" class="col-sm-3 col-form-label">Blood Group :</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="inputBloodgroup" name="blood" value="{{ employee.blood }}">
+                </div> 
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+                <div class="col-sm-2">
+                    <a href="/show" class="btn btn-secondary">Back</a>
+                </div>
+            </div>
+        </form>  
+    </div>
+    
+</body>
+</html>
